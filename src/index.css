@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Outfit:wght@500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply min-h-screen antialiased text-slate-100 bg-slate-950;
+    background-image:
+      radial-gradient(ellipse 120% 80% at 50% -20%, rgb(45 212 191 / 0.12), transparent),
+      radial-gradient(ellipse 80% 50% at 100% 50%, rgb(139 92 246 / 0.08), transparent),
+      radial-gradient(ellipse 60% 40% at 0% 80%, rgb(14 165 233 / 0.1), transparent);
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    @apply bg-cyan-500/30 text-white;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-cyan-400 rounded-sm;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply border border-white/10 bg-slate-900/40 backdrop-blur-xl shadow-xl shadow-black/20;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-cyan-300 via-teal-300 to-violet-400 bg-clip-text text-transparent;
+  }
+}
